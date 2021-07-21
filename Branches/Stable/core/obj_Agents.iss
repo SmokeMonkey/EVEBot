@@ -820,14 +820,9 @@ objectdef obj_Agents
 		call This.CheckButtonExists "${This.BUTTON_ACCEPT_MISSION}"
 		if !${Return}
 		{
-			Logger:Log["obj_Agents: ERROR: Did not find expected dialog! Found ${EVEWindow[agentinteraction_${EVE.Agent[${This.AgentIndex}].ID}].NumButtons} responses.  Will retry...", LOG_CRITICAL]
-			RetryCount:Inc
-			if ${RetryCount} > 4
-			{
-				Logger:Log["obj_Agents: ERROR: Retry count exceeded!  Aborting...", LOG_CRITICAL]
-				EVEBot.ReturnToStation:Set[TRUE]
-			}
+			Logger:Log["obj_Agents: ERROR: No mission from agent! Maybe finished the daily mission from researcher agent. Switching agents...", LOG_CRITICAL]
 			EVEWindow[ByCaption, "Agent Conversation - ${This.ActiveAgent}"]:Close
+			This:SetActiveAgent[${This.AgentList.NextAgent}]
 			return
 		}
 

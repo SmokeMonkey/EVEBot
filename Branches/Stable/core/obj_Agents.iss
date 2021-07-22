@@ -685,7 +685,7 @@ objectdef obj_Agents
 
 	function MissionDetails()
 	{
-		EVEWindow[ByCaption, "Journal"]:Close
+		; EVEWindow[ByCaption, "Journal"]:Close
 
 		variable index:agentmission amIndex
 		variable iterator amIterator
@@ -829,7 +829,7 @@ objectdef obj_Agents
 		EVE:Execute[OpenJournal]
 		wait 50
 
-		EVEWindow[ByCaption, "Journal"]:Close
+		; EVEWindow[ByCaption, "Journal"]:Close
 
 		variable index:agentmission amIndex
 		variable iterator amIterator
@@ -977,7 +977,7 @@ objectdef obj_Agents
 		Logger:Log["Waiting for mission dialog to update...", LOG_DEBUG]
 		wait 60
 
-		EVEWindow[ByCaption, "Journal"]:Close
+		; EVEWindow[ByCaption, "Journal"]:Close
 		EVEWindow[ByCaption, "Agent Conversation - ${This.ActiveAgent}"]:Close
 	}
 
@@ -1002,7 +1002,7 @@ objectdef obj_Agents
 		Logger:Log["Waiting for mission dialog to update..."]
 		wait 60
 
-		EVEWindow[ByCaption, "Journal"]:Close
+		; EVEWindow[ByCaption, "Journal"]:Close
 		EVEWindow[ByCaption,"Agent Conversation - ${This.ActiveAgent}"]:Close
 
 		variable int Waiting = 1200
@@ -1035,7 +1035,7 @@ objectdef obj_Agents
 		Logger:Log["Waiting for agent dialog to update..."]
 		wait 60
 
-		EVEWindow[ByCaption, "Journal"]:Close
+		; EVEWindow[ByCaption, "Journal"]:Close
 		EVEWindow[ByCaption,"Agent Conversation - ${This.ActiveAgent}"]:Close
 	}
 }

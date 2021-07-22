@@ -651,7 +651,7 @@ objectdef obj_Agents
 	{
 		EVE:Execute[OpenJournal]
 		wait 50
-		EVEWindow[ByCaption, "Journal"]:Close
+		; EVEWindow[ByCaption, "Journal"]:Close
 
 		variable index:agentmission amIndex
 		variable iterator amIterator
@@ -795,7 +795,7 @@ objectdef obj_Agents
 		EVE:Execute[OpenJournal]
 		wait 50
 
-		EVEWindow[ByCaption, "Journal"]:Close
+		; EVEWindow[ByCaption, "Journal"]:Close
 
 		variable index:agentmission amIndex
 		variable iterator amIterator
@@ -943,7 +943,7 @@ objectdef obj_Agents
 
 		EVE:Execute[OpenJournal]
 		wait 50
-		EVEWindow[ByCaption, "Journal"]:Close
+		; EVEWindow[ByCaption, "Journal"]:Close
 		EVEWindow[ByCaption, "Agent Conversation - ${This.ActiveAgent}"]:Close
 	}
 
@@ -969,7 +969,7 @@ objectdef obj_Agents
 
 		EVE:Execute[OpenJournal]
 		wait 50
-		EVEWindow[ByCaption, "Journal"]:Close
+		; EVEWindow[ByCaption, "Journal"]:Close
 		EVEWindow[ByCaption,"Agent Conversation - ${This.ActiveAgent}"]:Close
 
 		variable int Waiting = 1200
@@ -1005,7 +1005,7 @@ objectdef obj_Agents
 
 		EVE:Execute[OpenJournal]
 		wait 50
-		EVEWindow[ByCaption, "Journal"]:Close
+		; EVEWindow[ByCaption, "Journal"]:Close
 		EVEWindow[ByCaption,"Agent Conversation - ${This.ActiveAgent}"]:Close
 	}
 }

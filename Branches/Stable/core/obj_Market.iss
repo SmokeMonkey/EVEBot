@@ -37,14 +37,20 @@ objectdef obj_Market inherits obj_BaseClass
 		This.sellOrders:Clear
 		This.buyOrders:Clear
 
-		EVE:UpdateMarketOrders_A[${typeID}]
+		Logger:Log["obj_Market: before fetch."]
+		EVE:FetchMarketOrders[${typeID}]
 		wait 40
-		EVE:UpdateMarketOrders_B[${typeID}]
-		wait 10
-		EVE:GetMarketOrders[This.sellOrders, ${typeID}, "Sell"]
-		wait 10
-		EVE:GetMarketOrders[This.buyOrders, ${typeID}, "Buy"]
-		wait 10
+		
+		Logger:Log["obj_Market: after fetch."]
+		while !${EVE:GetMarketOrders[OrderIndex, ${typeID}](exists)}
+		{
+			wait 10
+		}
+		
+		; EVE:GetMarketOrders[This.sellOrders, ${typeID}]
+		; wait 10
+		; EVE:GetMarketOrders[This.buyOrders, ${typeID}, "Buy"]
+		; wait 10
 
 		Logger:Log["obj_Market: Found ${This.sellOrders.Used} sell orders."]
 		Logger:Log["obj_Market: Found ${This.buyOrders.Used} buy orders."]
